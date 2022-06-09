@@ -1,6 +1,6 @@
 <div align="center">
 
-![Image](.github/assets/ezyfs_black_wbg.png)
+# PLMore
 
 </div>
 
@@ -12,8 +12,7 @@
 
 </div>
 
-EzyFS( Easy File System ) is an application that facilitates File system
-operations, making them accessible to non technical users.
+PLMore is an open-source Product Lifecycle Management Software. It offers an alternative to the heavily priced archahic Windchill/Teamcenter solutions. Built with modern tools, It offers a new generation of PLM software that inherently complies with the industry latest technologies, mindsets and runs natively on the cloud.
 
 ## Technologies
 
@@ -28,13 +27,6 @@ operations, making them accessible to non technical users.
    
 </div>
 
-## :warning: Project Under Refactoring :warning:
-
-EzyFS is undergoing a major refactoring phase. I stopped new features
-development and decided to move to a new microservice architecture. You can view
-the old one at the `old-architecture`
-[branch](https://github.com/Mellywins/EzyFS/tree/old-architecture).
-
 ## Architecture
 
 <div align="center">
@@ -43,75 +35,151 @@ the old one at the `old-architecture`
 
 </div>
 
-## How we optimized our heavy workload microservice
+## Feature Roadmap
+#### 1. Bill of Materials (BOM)
+ Having a common source of information across your company is incredibly important during product development. At the very least, our system should provide a single definition of a particular product and its components. More advanced options include features specifically designed for different team members such as designers, engineers and other professionals who frequently collaborate. Excellent systems provide even more comprehensive BOM management. Some solutions extend a centralized BOM that allows users to access multi-level product structures in one place. There’s also drill-down functionality so users can view all levels of assembly and components. Also, health checking and risk assessment tools access online data about the parts you use throughout the product lifecycle. Further, users can see component availability and download compliance documents. Lastly, you can receive notifications anytime a BOM is edited.
 
-Compression And encryption come in really handy, but they also consume alot of
-computation power when used on large files. This may lead to performance issues
-in NodeJs APPs. NodeJs is a single threaded engine. So to make use of multiple
-CPUs cores, EzyFS introduced Parallel Processors.
+- [x] BOM Management
+- [x] drill-Down
+- [x] Function-Specific BOM
+- [x] Advanced Display Options
+- [x] Health Checking and Risk Assessment
+- [x] Alerts
 
-### How it works:
+#### 2. Computer-Aided Design (CAD) Tools and Management
+This accessory helps product designers and engineers map out and construct 2D and 3D models of commodities on a computer instead of doing it all on paper.
+<div align="center">
 
-![Image](./docs/assets/under_the_hood.png)
+![Image](./docs/assets/CAD.png)
+</div>
 
-## Supported Processors
+- [x] Change Management
+- [x] Variant Configuration
+- [x] Context-Specific BOM Views
+- [x] Document Repository
+- [x] Mobile Documentation
+- [x] Customer Needs Management Documentation
+- [x] Process Documentation
+- [x] Product Lifecycle Analysis Documentation
+- [x] Engineering Collaboration Documentation
+- [x] CAD File Management
+- [x] CAD Application Integration
 
-- Compression/Decompression: `.tgz`
-- Encryption/Decryption: Will have support for `rsa`, `ECC`.
-  > Our encryption engine will have compression by default.
+#### 3. Product Data Management (PDM)
+Storing, arranging and analyzing finished product data can be cumbersome without the right tools. Thanks to a product data management (PDM) module, you can chronicle product designs, necessities and procedures in one central area. Internal and external stakeholders, designers and other team members throughout your company can also upload and share product notes to encourage collaboration. You may also review BOM data, computer-aided design (CAD) documents, supplier information, material data and product lifecycles with a PDM accessory.
 
-## Hybrid Encryption System
+- [x] Data Sharing
+- [x] CAD files
+- [x] BOM Data
+- [x] Product Lifecycle Data
+- [x] Supplier Information
+- [x] Material Data
 
-EzyFS implements a high security hybrid encryption system. Either `RSA-AES` or
-`ECC-AES`, depending on the user's choice! Here are the steps:
+#### 4. Product Regulation and Governance
+Failing to follow regulation and compliance standards is one of the quickest ways to earn your business a bad reputation. But having the right tools built into your PLM system can make staying compliant much more comfortable than it would be otherwise.
 
-1. A random Cihper key is generated then used to encrypt. It is then encrypted
-   with the owner's ECC/RSA key and stored in our DB. Every job will have its
-   own cipher key for obvious security reasons.
-2. A random initialazation vector is generated and streamed to the file.
-3. The file is then encrypted with AES256.
-4. To decrypt, the owner must provide his private key to decrypt the cipherkey
-   first. Then it's used to decrypt the file.
+      <details>
+      <summary> Examples of Regulations that will be integrated in the long run </summary>
+      <br>
 
-## Key Recovery (WiP)
+      - [ ] Regulatory Compliance
 
-EzyFS will offer you the option to use our Key Recovery System. From a security
-point of view it comes with risks. But its benefits have a real merit too. If
-you wish to read more about it. Click on this
-[link](https://www.giac.org/paper/gsec/4355/encryption-key-recovery/107336). The
-policies to achieve this can be reduced to these main points:
+      - [ ] Medical Device Standards
 
-1. Keying material that should be recoverable by application
-2. How and where the keying material will be saved
-3. Who is responsible for the keying material, this could be an individual, a
-   department, or even a trusted vendor
-4. Who can request the recovery of a key
-5. What decisive factors will allow or disallow a key recovery
-6. Who owns the final decision if the decisive factors are not met
-7. Audit procedure for the recovery process
-8. Proper handling and destruction of recovered keying material
-9. Identification of anyone that should be notified of recovered keying
-   material.
-10. Procedures to follow if the Key Recovery System has been compromised
+      - [ ] Environmental Standards
 
-## What EzyFS offers to you!
+      - [ ] Product Safety Standards
 
-EzyFS will offer an easy to use interface to schedule Encryption/Compression
-jobs. But also, needless to say, the ability to Decrypt/Decompress!
+      - [ ] FDA Regulations
 
-- A GraphQL API to interact with the Backend services.
-- You can schedule periodic jobs (you can define them with CRON strings).
-- You can update/pause/delete/restart your ongoing jobs.
-- You can secure ur backups and sensitive files with EzyFS Asymmetic encryption.
-  You'll be granted your private Key, and the job you launch, delete or do will
-  have your fingerprint on them.
-- History of all the actions you take that impact jobs.
-- ...
+      - [ ] ISO Standards
 
-## Feature roadmap
+      - [ ] REACH
 
-- Key Restoration after it has been corrupt
-- Key Revokation
-- Reassign a User key to another after that user leaves the company
-- Ability to only respond to a certain Pool of IP Adresses ( Preferrably from
-  VPNs )
+      - [ ] RoHS
+
+      - [ ] WEEE
+
+      - [ ] JEDEC
+
+      - [ ] China RoHS
+
+      - [ ] Japanese Green Initiative
+
+      - [ ] Conflict Mineral Tracking
+
+      - [ ] DoD
+
+      - [ ] SEC Guidelines
+
+      - [ ] SOP
+
+      - [ ] Vendor-Specific Objective Evidence (VSOE)
+
+      - [ ] Sarbanes-Oxley Act
+
+      - [ ] AICPA
+
+      - [ ] FASB
+
+      - [ ] SEC
+
+      </details>
+
+#### 5. Project and Component Maintenance
+Project management tools are vital for providing users visibility into daily processes and progress. These features include tracking and scheduling capabilities, enabling you to manage product development and resource allocation in real time. Users can also see upcoming milestones and constraints for further planning. Additionally, you can opt for a system that manages your components. Many vendors make insights into component and production data readily available to users. Moreover, stakeholders can receive notifications anytime an edit has been made to CAD assembly regarding components. Users can also access information on manufacturer and supplier equivalent parts. This accessory helps users source the most well-suited components according to compliance, availability, and risk.
+
+- [x] Project Management
+
+- [x] Component Management
+
+
+
+
+#### 6. Quote Process Management
+
+You need data from many different sources during the quote process. PLM’s inherent coordination capabilities gather and organize data for product design to support your engineering teams. This appliance includes teams developing engineer-to-order and configure-to-order products. The system only shares the necessary data, meaning your team members can spend more time focusing on their work and less on hunting down information. A quote process management module also helps streamline your teams’ collaborative efforts.
+Additionally, quote process management includes tools to help users determine the cost of a schedule. Users can employ the system to gather PLM requirements and seek out the most competitive quotes.
+
+- [x] Collaborative Tools
+- [x] Cost of Schedule
+- [x] Automatic Work Order Creation
+- [x] Requirements Gathering
+- [x] Configure-to-Order
+- [x] Engineer-to-Order
+
+#### 7. Risk Management
+
+This feature brings risks to users’ attention, allowing them to manage, report and mitigate those instabilities. Reducing risks early on prevents issues from growing as they move through product development unseen, reducing the overall development cost. Some systems do this by “detecting” or “highlighting” risks, whereas some systems simply offer complete visibility through PM tools.
+
+- [x] Real-Time Project Visibility
+- [x] Risk Analysis
+- [x] Corrective and Preventive Action (CAPA)
+
+#### 8. User Access Levels
+
+ou don’t want another company benefiting from your team’s hard work, especially when it’s easily avoidable. Many systems control user access to sensitive information by prompting users with security requirements before entering the system. Additionally, once a user has gained access to the system, they can only see as much data as you let them. Provide access based on a specific role or a group hierarchy.
+
+- [x] Role and Group Hierarchy
+- [x] Role-Based Access
+- [x] Administrative Controls
+
+#### 9. Workflow and Change Management
+this suite of tools gives users insight into product activities. Users can determine phases for a project, as well as assign milestones to keep projects on track. Some systems allow users to see all pending and implemented changes, and all items that endure the subsequent effects. This visibility also extends to portfolio and resource management.
+
+- [x] Process Management
+- [x] Change Management
+- [x] Portfolio Management
+- [x] Resource Management
+
+#### 10. Collaboration and Reporting
+provide users with robust analytics tools that track the entire lifecycle of a product.
+
+- [x] Reporting
+- [x] Gantt Charts
+- [x] Dashboards
+- [x] Daily Updates
+- [x] Analytics
+
+#### 11. Deployment
+This will be one of the biggest advantages compared to other available PLMs. The software will be accompanied with a guideline to deploy on kubernetes. Wether it's on your on-premise server or in the cloud.
