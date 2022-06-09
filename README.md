@@ -78,7 +78,7 @@ Storing, arranging and analyzing finished product data can be cumbersome without
 #### 4. Product Regulation and Governance
 Failing to follow regulation and compliance standards is one of the quickest ways to earn your business a bad reputation. But having the right tools built into your PLM system can make staying compliant much more comfortable than it would be otherwise.
 
-      <details>
+<details>
       <summary> Examples of Regulations that will be integrated in the long run </summary>
       <br>
 
@@ -124,7 +124,7 @@ Failing to follow regulation and compliance standards is one of the quickest way
 
       - [ ] SEC
 
-      </details>
+</details>
 
 #### 5. Project and Component Maintenance
 Project management tools are vital for providing users visibility into daily processes and progress. These features include tracking and scheduling capabilities, enabling you to manage product development and resource allocation in real time. Users can also see upcoming milestones and constraints for further planning. Additionally, you can opt for a system that manages your components. Many vendors make insights into component and production data readily available to users. Moreover, stakeholders can receive notifications anytime an edit has been made to CAD assembly regarding components. Users can also access information on manufacturer and supplier equivalent parts. This accessory helps users source the most well-suited components according to compliance, availability, and risk.
