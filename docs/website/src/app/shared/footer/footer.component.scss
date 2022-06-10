@@ -1,0 +1,16 @@
+.footer-wrapper {
+    position:relative;
+    bottom: 0;
+    background-color: #141519;
+    color: white;
+    height: 50vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .element {
+        margin-left: 2em;
+        margin-right: 1em;
+        padding-top: 2em;
+        padding-bottom: 2em;
+    }
+}
