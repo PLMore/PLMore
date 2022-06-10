@@ -1,0 +1,22 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - docs/website/*
+jobs:
+  build-and-deploy:
+    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+
+      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+        run: |
+          npm install
+      - name: Deploy 🚀
+        env:
+          GH_TOKEN: ${{secrets.GH_TOKEN}}
+        run: npx ng deploy --repo=https://github.com/Mellywins/PLMore --base-href=/PLMore/ --name="Mellywins" --email="zouaghi.wow1919@gmail.com"
