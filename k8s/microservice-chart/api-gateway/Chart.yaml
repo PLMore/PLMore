@@ -1,4 +1,0 @@
-apiVersion: v1
-description: Api-gateway Chart
-name: api-gateway
-version: 1.0.0
