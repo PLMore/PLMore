@@ -13,6 +13,7 @@ export class GenericBlueComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }
