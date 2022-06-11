@@ -53,6 +53,16 @@
                 top: 0;
                 left: 0;
             }
+            .go-down-icon {
+                z-index: 1;
+                width: auto;
+                color: white;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                animation: hanging-arrow 0.5s alternate infinite;
+                padding-bottom: 1em;
+            }
         }
     }
 }
@@ -123,4 +133,14 @@
             }
         }
     }
+}
+
+@keyframes hanging-arrow {
+    0% {
+        transform: translate(0, 0px);
+    }
+    100% {
+        transform: translate(0, -10px);
+    }
+    
 }

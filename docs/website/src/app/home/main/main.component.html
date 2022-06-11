@@ -7,10 +7,11 @@
     </div>
 <div class="video-container">
 <video src="assets/home_video.m4v" autoplay loop muted></video>
+<a href="#downArrow"><i class="fa fa-angle-double-down fa-3x go-down-icon"></i></a>
 </div>
 </div>
 </div>
-<div class="info-container gray-bg">
+<div class="info-container gray-bg" id="downArrow">
     <app-home-info-card *ngFor="let el of homeContent" [text]="el.text" [title]="el.title" [btnurl]="el.btnurl" [btntext]="el.btntext" [imagePath]="el.imagePath"></app-home-info-card>
     
 </div>
