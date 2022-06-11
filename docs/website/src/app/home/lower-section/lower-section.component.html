@@ -1,0 +1,12 @@
+<div class="lower-section-wrapper">
+<div class="inner">
+<p>Your journey begins here</p>
+
+</div>
+<div class="card-group-holder">
+    <div class="card-holder" *ngFor="let el of elements; let i=index ">
+        <app-mid-card [imgPath]="el.imgPath" [text]="el.text" [title]="el.title" [url]="el.url" [order]="i"></app-mid-card>
+    </div>
+
+</div>
+</div> 

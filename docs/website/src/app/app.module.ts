@@ -9,6 +9,8 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { MainComponent } from './home/main/main.component';
 import { GenericBlueComponent } from './components/buttons/generic-blue/generic-blue.component';
 import { HomeInfoCardComponent } from './components/cards/home-info-card/home-info-card.component';
+import { LowerSectionComponent } from './home/lower-section/lower-section.component';
+import { MidCardComponent } from './components/cards/mid-card/mid-card.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { HomeInfoCardComponent } from './components/cards/home-info-card/home-in
     FooterComponent,
     MainComponent,
     GenericBlueComponent,
-    HomeInfoCardComponent
+    HomeInfoCardComponent,
+    LowerSectionComponent,
+    MidCardComponent
   ],
   imports: [
     BrowserModule,

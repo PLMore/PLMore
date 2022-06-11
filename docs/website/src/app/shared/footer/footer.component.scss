@@ -3,14 +3,29 @@
     bottom: 0;
     background-color: #141519;
     color: white;
-    height: 50vh;
+    height: 40vh;
     display: flex;
     justify-content: space-around;
-    align-items: center;
     .element {
         margin-left: 2em;
         margin-right: 1em;
         padding-top: 2em;
         padding-bottom: 2em;
+        p{
+            width: fit-content;
+        }
+        p:after {
+            content: '';
+            display: block;
+            margin: auto;
+            height: 3px;
+            width: 0px;
+            background: transparent;
+            transition: width .5s ease, background-color .5s ease;
+          }
+          p:hover:after {
+            width: 100%;
+            background: white;
+          }
     }
 }
