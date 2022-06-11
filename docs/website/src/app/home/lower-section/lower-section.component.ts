@@ -7,18 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LowerSectionComponent implements OnInit {
   elements : {title: string, text:string,imgPath:string,url:string}[]=[{
-    title: "Lorem ipsum dolor",
-    text:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis.",
+    title: "Migrate your pre-existing system",
+    text:"PLMore will offer migration solutions to entreprises coming from different softwares.",
     imgPath: "assets/home/stock-management.jpg",
     url: "#"
   },{
-    title: "Lorem ipsum dolor",
-    text:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis.",
+    title: "Visit our get started guide",
+    text:"Still not sure how to get going ? We have comprehensive guides on how to setup and get blazing with PLMore.",
     imgPath: "assets/home/stock-management.jpg",
     url: "#"
   },{
-    title: "Lorem ipsum dolor",
-    text:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis.",
+    title: "Still not convinced?",
+    text:"Visit our comparison page to understand how PLMore is the new game changer in the PLM industry.",
     imgPath: "assets/home/stock-management.jpg",
     url: "#"
   },
