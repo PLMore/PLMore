@@ -20,28 +20,28 @@ export class MainComponent implements OnInit {
       title: "Data-driven insights",
       btntext: "Read More",
       btnurl: "#",
-      imagePath: "assets/home/product-stats.jpg",
+      imagePath: "assets/home/product-stats.webp",
       imageHeight: "500px"
     },{
       title:"Materials & Stock Management",
       text: "View your stock and inventory data in a single view. Manage your BOMs and Batch Tracking in one place. You can also track your production and consumption in realtime.",
       btntext: "Read More",
       btnurl: "#",
-      imagePath: "assets/home/stock-management.jpg",
+      imagePath: "assets/home/stock-management.webp",
       imageHeight: "500px"
     },{
       title:"Regulation & Compliance",
       text: "Strategize your compliance with regulations and standards. PLMore offers you a complete solution to uphold your processes toward world class standards, including ISO standards, FDA Regulations and many more..",
       btntext: "Read More",
       btnurl: "#",
-      imagePath: "assets/home/law-regulations.jpg",
+      imagePath: "assets/home/law-regulations.webp",
       imageHeight: "500px"
     }, {
       title:"Supply Chain Management",
       text: "Manage your supply chain in one place. Keep track of your requests and procurements in an ergonomic manner. Check your advances and see how your supply chain is progressing.",
       btntext: "Read More",
       btnurl: "#",
-      imagePath: "assets/home/supply-chain.jpg",
+      imagePath: "assets/home/supply-chain.webp",
       imageHeight: "500px"
     }
   ]
