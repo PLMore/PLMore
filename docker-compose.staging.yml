@@ -10,8 +10,8 @@ services:
       context: .
       dockerfile: apps/core/staging.Dockerfile
     image: mellywins/ezyfs-core:latest
-    ports:
-      - ${PORT}:${PORT}
+    # ports:
+    #   - ${PORT}:${PORT}
     # command: npx nest start --watch
     networks:
       - webnet
@@ -87,8 +87,8 @@ services:
       - redis-server
     networks:
       - webnet
-    ports:
-      - ${REDIS_PORT}:${REDIS_PORT}
+    # ports:
+    #   - ${REDIS_PORT}:${REDIS_PORT}
     volumes:
       - ./redis-data:/var/lib/redis
       - ./redis.conf:/usr/local/etc/redis/redis.conf
