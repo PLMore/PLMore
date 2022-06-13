@@ -48,6 +48,7 @@ export class MainComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }
