@@ -1,0 +1,25 @@
+{
+    "app": {
+        "port": 3006,
+        "name":"io.plmore.bom",
+        "host":"172.28.1.15",
+        "protoPackage":"BOM"
+    },
+    "databases": {
+        "postgres": {
+            "uri": "postgres://postgres:5432/",
+            "name": "ezyfs",
+            "username": "postgres",
+            "password": "postgres",
+            "host": "postgres",
+            "port": 5432,
+            "options": ""
+
+        },
+        "redis": {
+            "host": "redis",
+            "port": 6379,
+            "password": ""
+        }
+    }
+}
