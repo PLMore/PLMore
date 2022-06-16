@@ -127,6 +127,22 @@ services:
       - '8600:8600/udp'
     volumes:
       - .:/usr/src/app
+  bom:
+    container_name: ${APP_NAME}-BOM
+    build:
+      context: .
+      dockerfile: apps/new-microservice/Dockerfile
+    image: mellywins/plmore-bom:latest
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - 3009:3000
+    # Make sure that the ip you assign is not previously taken.
+    # This is the ip adress pool: 172.28.0.0/16
+    networks:
+      webnet:
+        ipv4_address: 172.28.1.15
 
 networks:
   webnet:
