@@ -29,3 +29,8 @@ There are 3 main types of BOMs to be aware of:
 
 * Sales Bill of Material: A sales BOM (SBOM) defines a product in the sales stage, meaning details of the products prior to assembly. In an SBOM the list of finished productsand the components required to develop it appear seperately in the sales order document. Here the finished product is managed as a sales item instead of an inventory item.
 It is important to note that each type of BOM will involve a different structure and levle of detail. For example, an EBOM may list parts related to specefic function of the prudct such as chips for a circuit board, an MBOM by defnintion lists every material that goes into manufacturing a product.
+
+## Data Model
+This is a rough representation of the applied schema that will store the BOM information.
+
+![Image](../../docs/assets/bom-schema.png)
