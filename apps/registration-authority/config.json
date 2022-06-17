@@ -1,14 +1,14 @@
 {
   "app": {
     "port": 3001,
-    "name": "io.ezyfs.registration-authority",
+    "name": "io.plmore.registration-authority",
     "host": "172.28.1.2",
     "protoPackage": "REGISTRATION_AUTHORITY"
   },
   "databases": {
     "postgres": {
       "uri": "postgres://postgres:5432/",
-      "name": "ezyfs",
+      "name": "plmore",
       "username": "postgres",
       "password": "postgres",
       "host": "postgres",

@@ -12,7 +12,7 @@ services:
     build:
       context: .
       dockerfile: apps/core/Dockerfile
-    image: mellywins/ezyfs-scheduler:latest
+    image: mellywins/plmore-scheduler:latest
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
@@ -29,7 +29,7 @@ services:
     build:
       context: .
       dockerfile: apps/registration-authority/Dockerfile
-    image: mellywins/ezyfs-registration-authority:latest
+    image: mellywins/plmore-registration-authority:latest
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
@@ -46,7 +46,7 @@ services:
     build:
       context: .
       dockerfile: apps/notifications/Dockerfile
-    image: mellywins/ezyfs-notifications:latest
+    image: mellywins/plmore-notifications:latest
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
@@ -64,7 +64,7 @@ services:
     build:
       context: .
       dockerfile: apps/api-gateway/Dockerfile
-    image: mellywins/ezyfs-api-gateway:latest
+    image: mellywins/plmore-api-gateway:latest
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules

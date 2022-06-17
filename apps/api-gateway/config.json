@@ -1,7 +1,7 @@
 {
   "app": {
     "port": 3002,
-    "name": "io.ezyfs.api-gateway"
+    "name": "io.plmore.api-gateway"
   },
   "caching": {
     "ttl": 5,

@@ -9,7 +9,7 @@ services:
     build:
       context: .
       dockerfile: apps/core/staging.Dockerfile
-    image: mellywins/ezyfs-core:latest
+    image: mellywins/plmore-core:latest
     # ports:
     #   - ${PORT}:${PORT}
     # command: npx nest start --watch
@@ -24,7 +24,7 @@ services:
     build:
       context: .
       dockerfile: apps/notifications/staging.Dockerfile
-    image: mellywins/ezyfs-notifications:latest
+    image: mellywins/plmore-notifications:latest
     ports:
       - 3005:3000
     # command: npx nest start --watch
@@ -37,7 +37,7 @@ services:
     build:
       context: .
       dockerfile: apps/registration-authority/staging.Dockerfile
-    image: mellywins/ezyfs-registration-authority:latest
+    image: mellywins/plmore-registration-authority:latest
     ports:
       - 3001:3000
     # command: npx nest start --watch
@@ -50,7 +50,7 @@ services:
     build:
       context: .
       dockerfile: apps/api-gateway/staging.Dockerfile
-    image: mellywins/ezyfs-api-gateway:latest
+    image: mellywins/plmore-api-gateway:latest
     extra_hosts: *host-gateway
     ports:
       - 3002:3000

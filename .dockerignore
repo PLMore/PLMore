@@ -1,1 +1,7 @@
 /node_modules
+**/node_modules
+.github
+.husky
+.vscode
+docs
+k8s

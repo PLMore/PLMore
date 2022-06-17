@@ -1,14 +1,14 @@
 {
   "app": {
     "port": 3000,
-    "name": "io.ezyfs.core",
+    "name": "io.plmore.core",
     "host": "172.28.1.7",
     "protoPackage": "SCHEDULER"
   },
   "databases": {
     "postgres": {
       "uri": "postgres://postgres:5432/",
-      "name": "ezyfs",
+      "name": "plmore",
       "username": "postgres",
       "password": "postgres",
       "host": "postgres",

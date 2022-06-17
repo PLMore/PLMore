@@ -8,7 +8,7 @@
     "databases": {
         "postgres": {
             "uri": "postgres://postgres:5432/",
-            "name": "ezyfs",
+            "name": "plmore",
             "username": "postgres",
             "password": "postgres",
             "host": "postgres",

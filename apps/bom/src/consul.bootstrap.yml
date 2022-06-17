@@ -28,7 +28,7 @@ service:
   maxRetry: 5
   retryInterval: 5000
   tags: ['v1.0.0', 'api']
-  name: io.plmore.api-gateway
+  name: io.plmore.bom
   port: 3002
 loadbalance:
   ruleCls: RandomRule

@@ -28,7 +28,7 @@ service:
   maxRetry: 5
   retryInterval: 5000
   tags: ['v1.0.0', 'api']
-  name: io.ezyfs.core
+  name: io.plmore.core
   port: 3000
 loadbalance:
   ruleCls: RandomRule

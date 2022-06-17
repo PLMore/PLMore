@@ -134,7 +134,7 @@ service:
   maxRetry: 5
   retryInterval: 5000
   tags: ['v1.0.0', 'api']
-  name: io.ezyfs.api-gateway
+  name: io.plmore.api-gateway
   port: 3002
 loadbalance:
   ruleCls: RandomRule

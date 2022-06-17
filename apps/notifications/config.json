@@ -1,7 +1,7 @@
 {
   "app": {
     "port": 3005,
-    "name": "io.ezyfs.notifications",
+    "name": "io.plmore.notifications",
     "host": "172.28.1.4",
     "protoPackage": "NOTIFICATIONS"
   },
@@ -21,7 +21,7 @@
   "databases": {
     "postgres": {
       "uri": "postgres://postgres:5432/",
-      "name": "ezyfs",
+      "name": "plmore",
       "username": "postgres",
       "password": "postgres",
       "host": "postgres",

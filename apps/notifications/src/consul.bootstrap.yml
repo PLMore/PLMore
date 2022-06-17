@@ -28,7 +28,7 @@ service:
   maxRetry: 5
   retryInterval: 5000
   tags: ['v1.0.0', 'api']
-  name: io.ezyfs.notifications
+  name: io.plmore.notifications
   port: 3001
 loadbalance:
   ruleCls: RandomRule
