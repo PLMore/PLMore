@@ -4,4 +4,5 @@ export enum ConsulServiceKeys {
   SCHEDULER = 'ezyfs/config/io.plmore.core',
   API_GATEWAY = 'ezyfs/config/io.plmore.api-gateway',
   NOTIFICATIONS = 'ezyfs/config/io.plmore.notifications',
+  BOM = 'ezyfs/config/io.plmore.bom',
 }
