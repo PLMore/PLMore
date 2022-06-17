@@ -7,6 +7,7 @@ import {
   Column,
   BeforeInsert,
   OneToMany,
+  ManyToMany
 } from 'typeorm';
 import {IsEmail, IsPhoneNumber} from 'class-validator';
 import * as bcrypt from 'bcrypt';
@@ -16,6 +17,7 @@ import {TimestampEntites} from '../base/timestamp.entity';
 // eslint-disable-next-line import/no-cycle
 import {Email} from '../notifications/email.entity';
 import {QueuedJob} from '../base/job.entity';
+import { Workspace } from '../workspace';
 
 @Entity()
 @ObjectType()
@@ -95,6 +97,14 @@ export class User extends TimestampEntites {
   })
   @Field((type) => [UserRoleEnum])
   roles: string[];
+
+  @Field((type) => Workspace, {nullable: true})
+  @ManyToMany((type) => Workspace, (workspace) => workspace.creator)
+  ownedWorkspaces: Workspace[];
+
+  @Field((type) => Workspace, {nullable: true})
+  @ManyToMany((type) => Workspace, (workspace) => workspace.stakeholders)
+  stakeheldWorkspaces: Workspace[];
 
   @BeforeInsert()
   async hashPassword() {

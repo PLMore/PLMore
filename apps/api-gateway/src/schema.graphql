@@ -25,6 +25,15 @@ enum EmailTypeEnum {
   RESET_PASSWORD
 }
 
+type Workspace {
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  deletedAt: DateTime!
+  id: Int!
+  creator: User!
+  stakeholders: User!
+}
+
 type User {
   createdAt: DateTime!
   updatedAt: DateTime!
@@ -44,6 +53,8 @@ type User {
   lowerCasedUsername: String!
   gender: Gender
   roles: [UserRoleEnum!]!
+  ownedWorkspaces: Workspace
+  stakeheldWorkspaces: Workspace
 }
 
 enum Gender {
