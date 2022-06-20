@@ -1,19 +1,20 @@
-import { ConsulServiceKeys } from '@ezyfs/internal';
-import { ConsulConfigModule } from '@ezyfs/internal/modules/consul-config.module';
-import { dbConnectionFactory, Email, User } from '@ezyfs/repositories';
-import { Module } from '@nestjs/common';
-import { BomController } from './bom.controller';
-import { BomService } from './bom.service';
+import {ConsulServiceKeys} from '@ezyfs/internal';
+import {ConsulConfigModule} from '@ezyfs/internal/modules/consul-config.module';
+import {dbConnectionFactory, Email, User} from '@ezyfs/repositories';
+import {Module} from '@nestjs/common';
 import {ConsulService} from 'nestjs-consul';
 import {TypeOrmModule} from '@nestjs/typeorm';
-import { BomAction } from '@ezyfs/repositories/entities/bom/action';
-import { BomItem } from '@ezyfs/repositories/entities/bom/items';
-import { Material } from '@ezyfs/repositories/entities/materials';
-import { Project } from '@ezyfs/repositories/entities/project';
-import { Workspace } from '@ezyfs/repositories/entities/workspace';
+import {BomAction} from '@ezyfs/repositories/entities/bom/action';
+import {BomItem} from '@ezyfs/repositories/entities/bom/items';
+import {Material} from '@ezyfs/repositories/entities/materials';
+import {Project} from '@ezyfs/repositories/entities/project';
+import {Workspace} from '@ezyfs/repositories/entities/workspace';
+import {BomService} from './bom.service';
+import {BomController} from './bom.controller';
 
 @Module({
-  imports: [ConsulConfigModule,
+  imports: [
+    ConsulConfigModule,
     TypeOrmModule.forRootAsync({
       imports: [ConsulConfigModule],
       useFactory: (consul) =>
@@ -25,7 +26,14 @@ import { Workspace } from '@ezyfs/repositories/entities/workspace';
       inject: [ConsulService],
     }),
 
-    TypeOrmModule.forFeature([User,BomAction,BomItem,Material,Project,Workspace]),
+    TypeOrmModule.forFeature([
+      User,
+      BomAction,
+      BomItem,
+      Material,
+      Project,
+      Workspace,
+    ]),
   ],
   controllers: [BomController],
   providers: [BomService],

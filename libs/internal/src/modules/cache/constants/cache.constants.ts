@@ -1,0 +1,1 @@
+export const CACHE_OPTIONS = 'CACHE_OPTIONS';

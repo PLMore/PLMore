@@ -12,6 +12,7 @@ import {
 import {ConsulService} from 'nestjs-consul';
 import {AuthController} from './auth.controller';
 import {AuthService} from './auth.service';
+import {MicrosCachePrefix} from '@ezyfs/internal/modules/cache/constants/micros-cache-prefix.enum';
 
 @Module({
   imports: [
@@ -36,7 +37,11 @@ import {AuthService} from './auth.service';
     PassportModule.register({
       defaultStrategy: 'jwt',
     }),
-    RedisCacheModule,
+    RedisCacheModule.forFeature({
+      prefix: MicrosCachePrefix.REGISAUTH + 'auth-',
+      ttl: 60 * 60 * 24 * 7,
+      consulKey: ConsulServiceKeys.REGISTRATION_AUTHORITY,
+    }),
   ],
   controllers: [AuthController],
   providers: [

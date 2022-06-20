@@ -9,11 +9,17 @@ import {UserService} from './user.service';
 import {AuthModule} from '../auth/auth.module';
 import {GrpcGenericClientModule} from '@ezyfs/internal/grpc-clients/grpc-generic-client.module';
 import {GrpcToken} from '@ezyfs/internal/grpc-clients/types';
+import {MicrosCachePrefix} from '@ezyfs/internal/modules/cache/constants/micros-cache-prefix.enum';
+import {ConsulServiceKeys} from '@ezyfs/internal';
 
 @Module({
   imports: [
     TypeOrmModule.forFeature([User]),
-    RedisCacheModule,
+    RedisCacheModule.forFeature({
+      prefix: MicrosCachePrefix + 'user-',
+      ttl: 60 * 60 * 24 * 7,
+      consulKey: ConsulServiceKeys.REGISTRATION_AUTHORITY,
+    }),
     AuthModule,
     GrpcGenericClientModule.registerAsync({
       servicesList: [GrpcToken.NOTIFICATIONS],

@@ -1,17 +1,25 @@
 import {CACHE_MANAGER, Inject, Injectable} from '@nestjs/common';
 import {Cache} from 'cache-manager';
+import {CACHE_OPTIONS} from './constants/cache.constants';
+import {CacheOptions} from './interfaces/cache-options.interface';
 
 @Injectable()
 export class RedisCacheService {
-  constructor(@Inject(CACHE_MANAGER) private readonly cache: Cache) {}
+  constructor(
+    @Inject(CACHE_MANAGER) private readonly cache: Cache,
+    @Inject(CACHE_OPTIONS) private readonly cacheOptions: CacheOptions,
+  ) {}
 
-  async get(key): Promise<any> {
-    return this.cache.get(key);
+  prefix = this.cacheOptions.prefix;
+
+  ttl = this.cacheOptions.ttl;
+
+  async get(key: string): Promise<any> {
+    return this.cache.get(this.prefix + key);
   }
 
   async set(key, value) {
-    const oneYear = 356 * 24 * 60 * 60;
-    await this.cache.set(key, value, {ttl: oneYear});
+    await this.cache.set(this.prefix + key, value, {ttl: this.ttl});
   }
 
   async reset() {
@@ -19,6 +27,6 @@ export class RedisCacheService {
   }
 
   async del(key) {
-    await this.cache.del(key);
+    await this.cache.del(this.prefix + key);
   }
 }
