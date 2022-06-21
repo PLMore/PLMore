@@ -1,14 +1,20 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import {ObjectType, Field, Int} from '@nestjs/graphql';
-import {Column, Entity, ManyToOne, PrimaryGeneratedColumn, ManyToMany} from 'typeorm';
+import {
+  Column,
+  Entity,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+  ManyToMany,
+} from 'typeorm';
 import {TimestampEntites} from '../base/timestamp.entity';
-import { User } from '../users/user.entity';
+import {User} from '../users/user.entity';
 
 @ObjectType()
 @Entity()
 export class Workspace extends TimestampEntites {
   @PrimaryGeneratedColumn()
-  @Field((type) => Int,)
+  @Field((type) => Int)
   id: number;
 
   @ManyToOne(() => User, (user) => user.ownedWorkspaces)
@@ -19,6 +25,7 @@ export class Workspace extends TimestampEntites {
   @Field((type) => User)
   stakeholders: User[];
 
+  @ManyToMany(() => User, (user) => user.belongsToWorkspaces)
+  @Field((type) => User)
+  members: User[];
 }
-
-
