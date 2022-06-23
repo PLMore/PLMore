@@ -6,6 +6,7 @@ import {ConsulService} from 'nestjs-consul';
 import {ConsulServiceKeys, GatewayConfig, GqlContext} from '@ezyfs/internal';
 import {RedisOptions} from 'ioredis';
 import {join} from 'path';
+import {ApolloDriver, ApolloDriverConfig} from '@nestjs/apollo';
 
 @Injectable()
 export class GqlConfigService implements GqlOptionsFactory {
@@ -13,7 +14,7 @@ export class GqlConfigService implements GqlOptionsFactory {
     private readonly consul: ConsulService<GatewayConfig>, // private readonly accessToken: AccessTokenRpcClientService, // private readonly role: RolesRpcClientService, // private readonly billing: BillingsRpcClientService, // private readonly webhook: WebhooksRpcClientService,
   ) {}
 
-  async createGqlOptions(): Promise<GqlModuleOptions> {
+  async createGqlOptions(): Promise<ApolloDriverConfig> {
     /* Get redis config from consul */
     const gatewayConfig = await this.consul.get<GatewayConfig>(
       `${ConsulServiceKeys.API_GATEWAY}`,
@@ -26,6 +27,7 @@ export class GqlConfigService implements GqlOptionsFactory {
     /* initialize cache */
     const cache = new RedisCache(redisOptions);
     return {
+      driver: ApolloDriver,
       autoSchemaFile: join(
         process.cwd(),
         'apps/api-gateway/src/schema.graphql',
@@ -36,7 +38,7 @@ export class GqlConfigService implements GqlOptionsFactory {
         const bc = buildContext({req, res});
 
         return {
-          // @ts-ignore
+          //@ts-ignore
           payload,
           connection,
           ...bc,
@@ -47,7 +49,6 @@ export class GqlConfigService implements GqlOptionsFactory {
         };
       },
       cache,
-
       /**
        * Enable this at your own detriment. Without this, namespaced mutation won't work,
        * I have taken time to make sure resolvers guards are place in the right places.
@@ -55,9 +56,6 @@ export class GqlConfigService implements GqlOptionsFactory {
        * Here is the reason https://github.com/nestjs/graphql/issues/295
        */
       fieldResolverEnhancers: ['guards', 'interceptors'],
-      persistedQueries: {
-        cache,
-      },
       playground: true,
       introspection: true,
       installSubscriptionHandlers: true,
