@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@grpc/grpc-js": "1.5.5",
-    "@grpc/proto-loader": "0.6.9",
+    "@grpc/proto-loader": "0.6.13",
     "@nestjs-modules/mailer": "1.6.1",
     "@nestjs/bull": "0.4.2",
     "@nestjs/common": "8.2.5",
