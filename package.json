@@ -49,7 +49,7 @@
     "cache-manager-redis-store": "2.0.0",
     "class-transformer": "0.4.0",
     "class-validator": "0.13.2",
-    "dotenv": "10.0.0",
+    "dotenv": "16.0.1",
     "eslint-config-airbnb": "18.2.1",
     "fs": "0.0.1-security",
     "fstream": "1.0.12",
