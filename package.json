@@ -52,7 +52,7 @@
     "eslint-config-airbnb": "18.2.1",
     "fs": "0.0.1-security",
     "fstream": "1.0.12",
-    "graphql": "15.8.0",
+    "graphql": "16.5.0",
     "graphql-passport": "0.6.4",
     "gulp": "4.0.2",
     "module-alias": "2.2.2",
