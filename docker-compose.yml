@@ -111,7 +111,7 @@ services:
       - ./redis-data:/var/lib/redis
       - ./redis.conf:/usr/local/etc/redis/redis.conf
   consul-server:
-    image: consul:1.9.3
+    image: consul:1.12.2
     container_name: consul-server
     restart: always
     # volumes:
