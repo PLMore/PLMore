@@ -1,4 +1,4 @@
-FROM node:14.16.1-alpine3.11 As development
+FROM node:16.13.0-alpine3.11 As development
 WORKDIR /usr/src/app
 COPY package.json ./
 RUN npm install 
