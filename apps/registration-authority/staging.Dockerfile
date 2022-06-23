@@ -1,4 +1,4 @@
-FROM node:14.16.1-alpine3.11 
+FROM node:16.13.0-alpine3.11 
 # As development
 
 LABEL maintainer="oussama.zouaghi@insat.ucar.tn"
