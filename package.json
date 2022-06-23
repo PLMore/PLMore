@@ -78,7 +78,7 @@
   },
   "devDependencies": {
     "@nestjs/cli": "8.2.0",
-    "@nestjs/schematics": "8.0.5",
+    "@nestjs/schematics": "8.0.11",
     "@nestjs/testing": "8.2.5",
     "@nrwl/cli": "latest",
     "@nrwl/nx-cloud": "latest",
