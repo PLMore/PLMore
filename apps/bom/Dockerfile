@@ -1,4 +1,4 @@
-FROM node:14.16.1-alpine3.11 
+FROM node:14.18.1-alpine3.11 
 
 LABEL maintainer="oussama.zouaghi@insat.ucar.tn"
 ARG NODE_ENV=production
