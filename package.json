@@ -43,7 +43,7 @@
     "apollo-server-cache-redis": "3.3.1",
     "apollo-server-express": "3.6.1",
     "bcrypt": "5.0.1",
-    "bull": "3.29.3",
+    "bull": "4.8.4",
     "cache-manager": "4.0.1",
     "cache-manager-redis-store": "2.0.0",
     "class-transformer": "0.4.0",
