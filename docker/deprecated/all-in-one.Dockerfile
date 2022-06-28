@@ -6,7 +6,7 @@ COPY . .
 RUN npm run build
 
 
-FROM ubuntu:20.04 as production
+FROM ubuntu:22.04 as production
 RUN apt-get update && apt-get -y install curl wget
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
 RUN apt -y install nodejs systemctl
