@@ -36,7 +36,7 @@
     "@nestjs/microservices": "8.2.6",
     "@nestjs/passport": "8.1.0",
     "@nestjs/platform-express": "8.2.5",
-    "@nestjs/schedule": "1.1.0",
+    "@nestjs/schedule": "2.2.3",
     "@nestjs/typeorm": "8.0.3",
     "@types/crypto-js": "4.1.1",
     "@types/openpgp": "4.4.18",
