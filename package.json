@@ -58,7 +58,7 @@
     "gulp": "4.0.2",
     "module-alias": "2.2.2",
     "nestjs-consul": "1.4.0",
-    "node-fetch": "3.2.0",
+    "node-fetch": "3.3.2",
     "node-gyp": "9.0.0",
     "node-rsa": "1.1.1",
     "nodemailer": "6.7.5",
