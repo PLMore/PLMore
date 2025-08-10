@@ -50,7 +50,7 @@
     "class-transformer": "0.4.0",
     "class-validator": "0.13.2",
     "dotenv": "16.0.1",
-    "eslint-config-airbnb": "18.2.1",
+    "eslint-config-airbnb": "19.0.4",
     "fs": "0.0.1-security",
     "fstream": "1.0.12",
     "graphql": "^16.5.0",
